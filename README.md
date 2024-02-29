@@ -42,3 +42,4 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 - Multiple Email Sending to invite in Kanban
 - Kanban Board with Drag and drop card system
 - Progress bar in Sub-task (On clicking card)
+- Progressive Web App implemented
