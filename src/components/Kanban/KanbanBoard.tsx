@@ -138,10 +138,11 @@ const KanbanBoard = ({ boardID }: any) => {
   // useEffect(() => {
   //   updateLocalStorageBoards(boards);
   // }, [boards]);
+
   return (
     <div
       style={{ backgroundImage: `url(${kanbanDark.src})` }}
-      className='bg-cover w-full h-[91.3vh] flex flex-col'
+      className='bg-cover w-full h-[91.4vh] flex flex-col bg-image'
     >
       <div className='py-2  sticky top-0 bg-transparent tracking-widest text-neutral inline-block text-sm ml-8 leading-9 mr-2'>
         <h1> {project.projectName} </h1>
@@ -167,7 +168,7 @@ const KanbanBoard = ({ boardID }: any) => {
             <CustomInput
               displayClass='bg-[#1c1c1c] text-neutral border border-neutral
               rounded-3xl shadow-md shadow-black w-full text-center'
-              editClass='bg-[#1c1c1c] rounded-3xl p-4'
+              editClass='bg-[#1c1c1c]  rounded-3xl p-4'
               placeholder='Enter Column Name'
               text='Add Column'
               buttonText='Add Column'

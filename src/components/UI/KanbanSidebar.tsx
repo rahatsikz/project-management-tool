@@ -33,7 +33,7 @@ const Sidebar = () => {
           </button>
         </div>
         <hr />
-        <div className='h-full px-3 py-4 overflow-y-auto bg-main-background'>
+        <div className='px-3 py-4 overflow-y-auto bg-main-background'>
           <ul className='space-y-2 font-medium'>
             {kanbenSidebarItems.map((item) => (
               <MenuItem
@@ -47,7 +47,7 @@ const Sidebar = () => {
         </div>
       </div>
       {!showSidebar && (
-        <div className='h-[100vh] w-10 border-r bg-main-background  relative '>
+        <div className=' w-10 border-r bg-main-background  relative '>
           <IoIosArrowDropright
             onClick={() => {
               setShowSidebar((oldVal) => !oldVal);
