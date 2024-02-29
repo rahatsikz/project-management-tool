@@ -23,26 +23,24 @@ const SignUpPageContent = () => {
   const router = useRouter();
   const [userCreate, { isSuccess, isError }] = useUserCreateMutation();
   const handleSignUp = async (data: any) => {
-    const image = await ImageUpload(data?.image)
+    // const image = await ImageUpload(data?.image)
     const userData = {
       name: data?.name,
       email: data?.email,
       password: data?.password,
-      profileImg: image?.display_url
+      // profileImg: image?.display_url
     };
     try {
-      const res = await userCreate({ ...userData }).unwrap()
+      const res = await userCreate({ ...userData }).unwrap();
       if (!res?.success) {
-        return toast.error("Email has already registerd")
+        return toast.error("Email has already registerd");
       }
       toast.success(res?.message);
       router.push("/signin");
     } catch (err: any) {
-      toast.error("Something went Wrong")
+      toast.error("Something went Wrong");
     }
   };
-
-
 
   const defaultOptions = {
     loop: false,
@@ -55,10 +53,9 @@ const SignUpPageContent = () => {
 
   useEffect(() => {
     if (!isError && isSuccess) {
-      setDoorOpen(true)
+      setDoorOpen(true);
     }
-  }, [isError, isSuccess, doorOpen])
-
+  }, [isError, isSuccess, doorOpen]);
 
   return (
     <div className='min-h-screen bg-gray-100 dark:bg-black/90  flex justify-center'>
@@ -71,37 +68,29 @@ const SignUpPageContent = () => {
           </div>
           <div className='mt-12 flex flex-col items-center'>
             <div className='w-full flex-1 mt-8'>
-              <div className='flex flex-col items-center lg:max-w-xs mx-auto'>
-                <Button className='gap-8 w-full' variant='transparent'>
-                  <GoogleSVG /> Sign up with Google
-                </Button>
-              </div>
-
               <div className='my-12 border-b text-center'>
                 <div className='leading-none px-2 inline-block text-sm text-secondary tracking-wide font-medium bg-main-background transform translate-y-1/2'>
-                  Or sign up with your email
+                  sign up with your email
                 </div>
               </div>
-              <Form submitHandler={handleSignUp} resolver={yupResolver(SignUpSchema)}>
-                <div
-                  className='mx-auto lg:max-w-sm  flex flex-col gap-3 dark:text-neutral'
-                >
+              <Form
+                submitHandler={handleSignUp}
+                resolver={yupResolver(SignUpSchema)}
+              >
+                <div className='mx-auto lg:max-w-sm  flex flex-col gap-3 dark:text-neutral'>
                   <FormInput
-                    name="name"
+                    name='name'
                     type='text'
                     placeholder='Full Name'
                     required
                   />
                   <FormInput
-
                     name='email'
-
                     type='email'
                     placeholder='Email'
                     required
                   />
                   <FormInput
-
                     name='password'
                     type='password'
                     placeholder='Password'
@@ -114,15 +103,14 @@ const SignUpPageContent = () => {
                     required
                   />
 
-                  <FormFileInput
+                  {/* <FormFileInput
                     name='image'
-                  />
+                  /> */}
                   <Button className='w-full' type='submit'>
                     Sign Up
                   </Button>
                 </div>
               </Form>
-
 
               <div className='mt-6'>
                 <p className='text-center text-secondary'>

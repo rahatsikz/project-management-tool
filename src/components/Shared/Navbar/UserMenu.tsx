@@ -15,13 +15,13 @@ import toast from "react-hot-toast";
 
 const UserMenu = () => {
   const userInfo = getUserInfo() as any;
-  const user = useGetUserQuery(userInfo?.id)
+  const user = useGetUserQuery(userInfo?.id);
   const [isOpen, setIsOpen] = useState(false);
   const router = useRouter();
 
   const handleLogOut = (authKey: string) => {
     logoutUser(authKey);
-    toast.success("User Logout")
+    toast.success("User Logout");
     router.push("/");
     router.refresh();
   };
@@ -71,32 +71,12 @@ const UserMenu = () => {
           >
             {userInfo?.role === "admin" ? (
               <div className=''>
-                <Link href={"/profile"}>
-                  <MenuItem onClick={toggleOpen}>Your Profile</MenuItem>
-                </Link>
-                <Link href={"/project/board"}>
-                  <MenuItem onClick={toggleOpen}>Your Board</MenuItem>
-                </Link>
-                <Link href={"/admin"}>
-                  <MenuItem onClick={toggleOpen}>Admin Dashboard</MenuItem>
-                </Link>
-                <hr />
                 <MenuItem onClick={() => handleLogOut(authKey)}>
                   Logout
                 </MenuItem>
               </div>
             ) : userInfo?.role === "user" ? (
               <div className=''>
-                <Link href={"/profile"}>
-                  <MenuItem onClick={toggleOpen}>Your Profile</MenuItem>
-                </Link>
-                <Link href={"/project/board"}>
-                  <MenuItem onClick={toggleOpen}>Your Board</MenuItem>
-                </Link>
-                <Link href={"/dashboard"}>
-                  <MenuItem onClick={toggleOpen}>Dashboard</MenuItem>
-                </Link>
-                <hr />
                 <MenuItem onClick={() => handleLogOut(authKey)}>
                   Logout
                 </MenuItem>

@@ -19,7 +19,6 @@ const SignInPageContent = () => {
     },
   };
 
-
   return (
     <div className='min-h-screen bg-gray-100 dark:bg-black/90  flex justify-center'>
       <div className='max-w-screen-xl m-0 sm:m-10 bg-main-background shadow sm:rounded-lg flex md:flex-col lg:flex-row justify-center flex-1'>
@@ -31,15 +30,9 @@ const SignInPageContent = () => {
           </div>
           <div className='mt-12 flex flex-col items-center'>
             <div className='w-full flex-1 mt-8'>
-              <div className='flex flex-col items-center lg:max-w-xs mx-auto'>
-                <Button className='gap-8 w-full' variant='transparent'>
-                  <GoogleSVG /> Sign In with Google
-                </Button>
-              </div>
-
               <div className='my-12 border-b text-center'>
                 <div className='leading-none px-2 inline-block text-sm text-secondary tracking-wide font-medium bg-main-background transform translate-y-1/2'>
-                  Or sign in with your email
+                  sign in with your email
                 </div>
               </div>
 
