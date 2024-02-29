@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+:root {
+    /* System Colors */
+
+    /* Background colors */
+    --main-bg: rgba(255, 255, 255, 1);
+    --primary-color: rgba(47, 185, 210, 1);
+    --secondary-color: rgba(135, 137, 138, 1);
+    --neutral-color: rgb(13, 13, 13);
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+    --main-bg: rgb(13, 13, 13);
+    --primary-color: rgba(47, 185, 210, 1);
+    --secondary-color: rgba(135, 137, 138, 1);
+    --neutral-color: rgba(255, 255, 255, 1)
+    }
+}
+
+@layer components {
+    .bg-cover-text {
+      @apply w-[12rem]
+      h-[6rem]
+      p-2
+      relative
+      overflow-hidden
+      block
+      z-10	
+      bg-cover
+      bg-no-repeat
+      bg-center
+      rounded-md	
+      before:content-['']
+    before:absolute
+    before:inset-0
+    before:block
+    before:bg-gradient-to-r
+
+            before:opacity-75
+            before:z-[-5]
+      ;
+    }
+  }

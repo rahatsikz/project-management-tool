@@ -1,0 +1,14 @@
+/* Light Mode */
+/* input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 30px #F3F4F6 inset;
+    color: black;
+  } */
+  
+  /* Dark Mode */
+  /* @media (prefers-color-scheme: dark) {
+    input:-webkit-autofill {
+      -webkit-box-shadow: 0 0 0 30px black inset;
+      color: #F3F4F6;
+    }
+  } */
+  
